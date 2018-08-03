@@ -1,0 +1,6 @@
+allure-results/
+target/
+.idea/
+*.iml
+*.json
+*.xml
