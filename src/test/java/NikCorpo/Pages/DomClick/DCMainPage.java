@@ -11,7 +11,7 @@ import ru.sbtqa.tag.pagefactory.context.PageContext;
 @PageEntry(title = "ДомКлик — cервис для поиска и покупки недвижимости в ипотеку")
 public class DCMainPage extends WebPage {
 
-    @ElementTitle("Вторичка")
+    @ElementTitle("Выпадающие меню со списком городов")
     @FindBy(xpath = "//div[contains(@class, 'region-select__dropdown')]")
     public WebElement btnSecondary;
 

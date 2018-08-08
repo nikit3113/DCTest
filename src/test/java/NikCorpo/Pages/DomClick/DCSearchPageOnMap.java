@@ -8,8 +8,8 @@ import ru.sbtqa.tag.pagefactory.annotations.ElementTitle;
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 import ru.sbtqa.tag.pagefactory.utils.ExpectedConditionsUtils;
 
-@PageEntry(title = "Страница поиска")
-public class DCSearchPage extends WebPage {
+@PageEntry(title = "Страница поиска на карте")
+public class DCSearchPageOnMap extends WebPage {
 
     @ElementTitle("3 комнаты в квартире")
     @FindBy(xpath = "//*[@id=\"content\"]/div/main/div/div[2]/div[2]/form/div/div[2]/div/div/label[3]/span")
@@ -68,8 +68,19 @@ public class DCSearchPage extends WebPage {
     @FindBy(xpath = "//*[@id=\"floorsTo\"]")
     public WebElement numberOfStoreysTo;
 
+    @ElementTitle("Раздельный санузел")
+    @FindBy(xpath = "//*[@id=\"content\"]/div/main/div/div[2]/div[2]/form/div/div[4]/div[5]/div/label[2]/span")
+    public WebElement separatedWC;
 
-    public DCSearchPage(WebDriver driver) {
+    @ElementTitle("Балкон/Лоджия")
+    @FindBy(xpath = "//*[@id=\"content\"]/div/main/div/div[2]/div[2]/form/div/div[4]/div[6]/div/label[2]/span")
+    public WebElement balcony;
+
+    @ElementTitle("Показать списком")
+    @FindBy(xpath = "//*[@id=\"content\"]/div/main/div/div[3]/div/a")
+    public WebElement showListView;
+
+    public DCSearchPageOnMap(WebDriver driver) {
         super(driver);
         ExpectedConditionsUtils.waitUntilElementPresent(maxPrice);
     }
