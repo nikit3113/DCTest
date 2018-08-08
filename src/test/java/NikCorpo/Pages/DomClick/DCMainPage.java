@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import ru.sbtqa.tag.pagefactory.WebPage;
 import ru.sbtqa.tag.pagefactory.annotations.ElementTitle;
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
+import ru.sbtqa.tag.pagefactory.context.PageContext;
 
 @PageEntry(title = "ДомКлик — cервис для поиска и покупки недвижимости в ипотеку")
 public class DCMainPage extends WebPage {
@@ -14,7 +15,7 @@ public class DCMainPage extends WebPage {
     @FindBy(xpath = "//div[contains(@class, 'region-select__dropdown')]")
     public WebElement btnSecondary;
 
-    @ElementTitle("Кнопка начать подбор")
+    @ElementTitle("Начать подбор")
     @FindBy(xpath = "//div[contains(@class, 'search-form__item')]//button")
     public WebElement btnStart;
 
@@ -24,5 +25,6 @@ public class DCMainPage extends WebPage {
 
     public DCMainPage(WebDriver driver) {
         super(driver);
+        PageContext.setCurrentPage(this);
     }
 }
